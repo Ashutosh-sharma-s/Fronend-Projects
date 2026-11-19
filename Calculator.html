@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        .container{
+            margin: 10px;
+            padding: 30px;
+            border: solid;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            border-radius: 20px;
+            width: 28rem;
+            height: 25rem;
+            background-color: #302626;
+        }
+        #num{
+            font-size: large;
+            width: 89%;
+            height: 40px;
+            background-color: rgb(57, 78,117);
+        }
+        #n{
+            width: 90px;
+            height: 50px;
+            font-size: large;
+            background-color: tan;
+            text-align: center;
+        }
+          
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+
+        <input type="text" name="" id="num">
+        <p>
+         <input type=" button" name="" id="n" value="mrc" onclick="clean('--------------mrc----------------')" style="background-color: rgb(179, 128, 61);">
+         <input type=" button" name="" id="n" value="m+" onclick="clean('m+')" style="background-color: rgb(179, 128, 61);">
+         <input type=" button" name="" id="n" value="m-" onclick="clean('m-')" style="background-color: rgb(179, 128, 61);">
+         <input type=" button" name="" id="n" value="/" onclick="v('/')" style="background-color: rgb(179, 128, 61);">
+        </p>
+    <p>
+        <input type=" button" name="" id="n" value="1" onclick="v('1')">
+        <input type=" button" name="" id="n" value="2" onclick="v('2')">
+        <input type=" button" name="" id="n" value="3" onclick="v('3')">
+        <input type=" button" name="" id="n" value="*" onclick="v('*')" style="background-color: #ff4500;">
+    </p>
+    <p>
+        <input type=" button" name="" id="n" value="4" onclick="v('4')">
+        <input type=" button" name="" id="n" value="5" onclick="v('5')">
+        <input type=" button" name="" id="n" value="6" onclick="v('6')">
+        <input type=" button" name="" id="n" value="-" onclick="v('-')" style="background-color: #ff4500;">
+    </p>
+    <p>
+        <input type=" button" name="" id="n" value="7" onclick="v('7')">
+        <input type=" button" name="" id="n" value="8" onclick="v('8')">
+        <input type=" button" name="" id="n" value="9" onclick="v('9')">
+        <input type=" button" name="" id="n" value="/" onclick="v('+')" style="background-color: #ff4500;">
+    </p>
+    <p>
+
+        <input type=" button" name="" id="n" value="." onclick="v('.')">
+        <input type=" button" name="" id="n" value="0" onclick="v('0')">
+        <input type=" button" name="" id="n" value="c" onclick="clean(' ')">
+        <input type=" button" name="" id="n" value="=" onclick="calculater()" style="background-color: rgb(129, 67,229);">
+    </p>
+    
+</div>
+    
+    
+    
+</body>
+
+<script>
+    function clean(val){
+        document.getElementById('num').value=val;
+    }
+    function v(val){
+        document.getElementById('num').value+=val;
+    }
+     function calculater(){
+        try{
+            clean(eval(document.getElementById('num').value))
+        }catch(e){
+            e("Error")
+
+        }
+     }
+</script>
+</html>
